@@ -1,0 +1,8 @@
+psql:tests/insert_ulid_test.sql:18: NOTICE:  Total time: 00:00:44.512218
+psql:tests/insert_ulid_test.sql:18: NOTICE:  Average time: 00:00:00.000045
+psql:tests/insert_uuid_test.sql:18: NOTICE:  Total time: 00:00:41.821932
+psql:tests/insert_uuid_test.sql:18: NOTICE:  Average time: 00:00:00.000042
+psql:tests/find_ulid_test.sql:18: NOTICE:  Total time: 00:00:31.766503
+psql:tests/find_ulid_test.sql:18: NOTICE:  Average time: 00:00:00.000032
+psql:tests/find_uuid_test.sql:18: NOTICE:  Total time: 00:00:23.72478
+psql:tests/find_uuid_test.sql:18: NOTICE:  Average time: 00:00:00.000024
