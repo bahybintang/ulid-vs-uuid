@@ -1,11 +1,11 @@
 \c rpl
-CREATE OR REPLACE FUNCTION find_random_ulid_data()
-RETURNS TEXT[] AS $$
+CREATE OR REPLACE FUNCTION find_random_ulid()
+RETURNS void AS $$
 DECLARE
-    search TEXT := generate_ulid();
-    ulid_result INT;
+    row_data record;
 BEGIN
-    SELECT ulid INTO ulid_result FROM ulid_testing WHERE ulid = search LIMIT 1;
-    RETURN ulid_result;
+    FOR row_data IN SELECT * FROM ulid_testing ORDER BY random() LIMIT 100000 LOOP
+        PERFORM 'SELECT * FROM ulid_testing WHERE ulid = row_data.ulid';
+    END LOOP;
 END;
 $$ LANGUAGE plpgsql;
