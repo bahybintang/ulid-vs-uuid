@@ -7,7 +7,7 @@ DECLARE
 BEGIN
     FOREACH query IN ARRAY uuids LOOP
         new_age := 18 + random() * (65 - 18 + 1);
-        UPDATE uuid_testing SET age = new_age WHERE uuid = row_data.uuid;
+        UPDATE uuid_testing SET age = new_age WHERE uuid = query;
     END LOOP;
 END;
 $$ LANGUAGE plpgsql;
