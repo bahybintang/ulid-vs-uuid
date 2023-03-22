@@ -8,6 +8,8 @@ init:
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/insert_uuid.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_ulid.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_uuid.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_ulid.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_uuid.sql"
 
 # Test every one million data
 test:
@@ -15,3 +17,7 @@ test:
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/insert_uuid_test.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_ulid_test.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_uuid_test.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_ulid_init.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_uuid_init.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_ulid_test.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_uuid_test.sql"
