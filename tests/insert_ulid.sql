@@ -22,7 +22,7 @@ DECLARE
     start_time TIMESTAMP;
     end_time TIMESTAMP;
     total_time INTERVAL;
-    iterations INT := 10000;
+    iterations INT := 1000000;
 BEGIN
     start_time := clock_timestamp();
     FOR i IN 1..iterations LOOP
