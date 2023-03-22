@@ -1,11 +1,11 @@
 \c rpl
-CREATE OR REPLACE FUNCTION find_random_uuid()
+CREATE OR REPLACE FUNCTION find_random_uuid(uuids TEXT[])
 RETURNS void AS $$
 DECLARE
-    row_data record;
+    query TEXT;
 BEGIN
-    FOR row_data IN SELECT * FROM uuid_testing ORDER BY random() LIMIT 100000 LOOP
-        PERFORM 'SELECT * FROM uuid_testing WHERE uuid = row_data.uuid';
+    FOREACH query IN ARRAY uuids LOOP
+        PERFORM FORMAT('SELECT * FROM uuid_testing WHERE uuid = %s', query);
     END LOOP;
 END;
 $$ LANGUAGE plpgsql;
