@@ -12,6 +12,6 @@ BEGIN
     END LOOP;
     end_time := clock_timestamp();
     total_time := end_time - start_time;
-    RAISE NOTICE 'Execution time: %', total_time;
+    RAISE NOTICE 'Execution Time: %', total_time;
 END;
 $$;

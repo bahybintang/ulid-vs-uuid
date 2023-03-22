@@ -1,8 +1,8 @@
-psql:tests/insert_ulid_test.sql:18: NOTICE:  Execution time: 00:00:52.069953
+psql:tests/insert_ulid_test.sql:18: NOTICE:  Execution Time: : 00:00:52.069953
 psql:tests/insert_ulid_test.sql:18: NOTICE:  Average time: 00:00:00.000052
-psql:tests/insert_uuid_test.sql:18: NOTICE:  Execution time: 00:00:41.136721
+psql:tests/insert_uuid_test.sql:18: NOTICE:  Execution Time: : 00:00:41.136721
 psql:tests/insert_uuid_test.sql:18: NOTICE:  Average time: 00:00:00.000041
-psql:tests/find_ulid_test.sql:18: NOTICE:  Execution time: 00:00:32.523473
+psql:tests/find_ulid_test.sql:18: NOTICE:  Execution Time: : 00:00:32.523473
 psql:tests/find_ulid_test.sql:18: NOTICE:  Average time: 00:00:00.000033
-psql:tests/find_uuid_test.sql:18: NOTICE:  Execution time: 00:00:24.990186
+psql:tests/find_uuid_test.sql:18: NOTICE:  Execution Time: : 00:00:24.990186
 psql:tests/find_uuid_test.sql:18: NOTICE:  Average time: 00:00:00.000025
