@@ -8,16 +8,16 @@ init:
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/insert_uuid.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_ulid.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_uuid.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/update_ulid.sql"
+	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/update_uuid.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_ulid.sql"
 	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_uuid.sql"
 
-# Test every one million data
 test:
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/insert_ulid_test.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/insert_uuid_test.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_ulid_test.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/find_uuid_test.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_ulid_init.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_uuid_init.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_ulid_test.sql"
-	PGPASSWORD=postgres psql -U postgres -h localhost -c "\i tests/join_uuid_test.sql"
+	./benchmark.sh
+
+reset:
+	PGPASSWORD=postgres psql -U postgres -h localhost -d rpl -c "drop table ulid_testing;"
+	PGPASSWORD=postgres psql -U postgres -h localhost -d rpl -c "drop table uuid_testing;"
+	PGPASSWORD=postgres psql -U postgres -h localhost -d rpl -c "drop table uuid_join_testing;"
+	PGPASSWORD=postgres psql -U postgres -h localhost -d rpl -c "drop table ulid_join_testing;"
